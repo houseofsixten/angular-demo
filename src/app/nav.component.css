@@ -1,0 +1,91 @@
+body
+{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.leftnav-container
+{
+    border-top: 1px black solid;
+    border-left: 1px black solid;
+    border-right: 1px black solid;
+}
+
+.leftnav-item
+{
+    border-bottom: 1px black solid;
+}
+
+.leftnav-item-label
+{
+    padding-left: 10px;
+    font-size: 18px;
+}
+
+.leftnav-sub-item
+{    
+    border-bottom: none;
+    height: 0px;
+    overflow: hidden;
+}
+
+@keyframes subexpand {
+    0% { height: 0px; border-bottom: none; }
+    25% { height: 5px; }
+    50% { height: 10px; }
+    75% { height: 15px; }
+    100% { height: 20px; border-bottom: 1px black solid; }
+}
+
+.expanded-sub {
+    animation-name: subexpand;
+    animation-duration: 0.25s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes subcollapse {
+    0% { height: 20px; border-bottom: 1px black solid; }
+    25% { height: 15px; }
+    50% { height: 10px; }
+    75% { height: 5px; }
+    100% { height: 0px; border-bottom: none; }
+}
+
+.collapsed-sub {
+    animation-name: subcollapse;
+    animation-duration: 0.25s;
+    animation-fill-mode: forwards;
+}
+
+.leftnav-sub-item-label
+{
+    padding-left: 50px;
+    font-size: 14px;
+}
+
+@keyframes arrowturn {
+    0% { --fa-rotate-angle: 0deg; }
+    25% { --fa-rotate-angle: 23deg; }
+    50% { --fa-rotate-angle: 45deg; }
+    75% { --fa-rotate-angle: 67deg; }
+    100% { --fa-rotate-angle: 90deg; }
+}
+
+.expanded-arrow {
+    animation-name: arrowturn;
+    animation-duration: 0.25s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes arrowrevert {
+    0% { --fa-rotate-angle: 90deg; }
+    25% { --fa-rotate-angle: 67deg; }
+    50% { --fa-rotate-angle: 45deg; }
+    75% { --fa-rotate-angle: 23deg; }
+    100% { --fa-rotate-angle: 0deg; }
+}
+
+.collapsed-arrow {
+    animation-name: arrowrevert;
+    animation-duration: 0.25s;
+    animation-fill-mode: forwards;
+}

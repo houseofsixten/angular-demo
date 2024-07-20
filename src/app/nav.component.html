@@ -1,0 +1,29 @@
+
+        
+        <div class="leftnav-container">
+
+            @for (item of navItems; track item.id) {
+                <div class="leftnav-item-container">
+
+                    <section (click)="onClick(item.id)">
+                        <div class="leftnav-item" id="leftnav-parent-{{item.id}}">
+                            <div class="leftnav-item-label">                        
+                                <span class="{{ item.expandedClass }}" id="item-{{item.id}}-arrow"></span> {{item.label}}
+                            </div>
+                        </div>
+                    </section>
+
+                    <div class="leftnav-sub-item-container">
+
+                        @for (child of item.children; track child.id) {
+                            <div class="{{ item.childClass }}">
+                                <div class="leftnav-sub-item-label"> {{ child.label }} </div>
+                            </div>
+                        }
+
+                    </div>
+
+                </div>
+            }
+
+        </div>

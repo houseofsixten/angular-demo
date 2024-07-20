@@ -1,0 +1,16 @@
+.editable-div-container {
+    margin-top: 10px; 
+    margin-bottom: 10px; 
+}
+
+.editable-div {
+    border: 1px lightgray solid;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.secret-message {
+    font-size: 12px;
+    font-style: italic;
+    color: green;
+}
