@@ -185,48 +185,12 @@
 
       <app-nav></app-nav>
       
-      <h1>Hello, {{ title }}</h1>
-      <p>Congratulations! Your app is running. 🎉</p>
-
-      @if (hasDatabase)
-      {
-        <span>The database is connected</span>
-      }
-      @else
-      {
-        <span>No database is connected</span>
-      }
-
-      <div class="editable-div-container">
-        <div class="editable-div" [contentEditable]="isEditable"></div>
-      </div>
-
-      <section (mouseover)="onMouseOver()" (mouseout)="onMouseOut()">
-        There's a secret message for you, hover to reveal
-        <div class="secret-message">
-          {{ message }}
-        </div>
-      </section>
+      <h1>Hello, {{ title }}</h1>      
 
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
       
-      
-      <ul>
-        @for (word of frogWords; track word.id) {
-          <li>{{ word.text }}</li>
-        }
-      </ul>
     </div>
   </div>
 </main>
-
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
