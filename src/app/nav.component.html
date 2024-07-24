@@ -17,7 +17,11 @@
 
                         @for (child of item.children; track child.id) {
                             <div class="{{ item.childClass }}">
-                                <div class="leftnav-sub-item-label"> {{ child.label }} </div>
+                                <div class="leftnav-sub-item-label">
+                                    <a routerLink="{{ child.linkTo }}" routerLinkActive="active">
+                                    {{ child.label }}
+                                    </a>
+                                </div>
                             </div>
                         }
 
