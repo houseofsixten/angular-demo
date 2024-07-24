@@ -19,6 +19,7 @@ body
 {
     padding-left: 10px;
     font-size: 18px;
+    background-color: #E6F8FE;
 }
 
 .leftnav-sub-item
@@ -26,6 +27,7 @@ body
     border-bottom: none;
     height: 0px;
     overflow: hidden;
+    background-color: white;
 }
 
 @keyframes subexpand {
