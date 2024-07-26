@@ -11,5 +11,5 @@ import { NavComponent } from './nav.component';
 })
 
 export class AppComponent {
-  title = 'House of Sixten';  
+  title = 'House of Sixten';
 }

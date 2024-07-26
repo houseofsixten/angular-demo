@@ -1,5 +1,13 @@
 import { Component } from '@angular/core';
 
+const illusionPages = [
+  "page000.jpg",  "page001.jpg", "page002.jpg", "page003.jpg" , "page004.jpg", "page005.jpg", "page006.jpg", "page007.jpg", "page008.jpg", "page009.jpg",
+  "page010.jpg",  "page011.jpg", "page012.jpg", "page013.jpg" , "page014.jpg", "page015.jpg", "page016.jpg", "page017.jpg", "page018.jpg", "page019.jpg",
+  "page020.jpg",  "page021.jpg", "page022.jpg", "page023.jpg" , "page024.jpg", "page025.jpg", "page026.jpg", "page027.jpg", "page028.jpg", "page029.jpg",
+  "page030.jpg",  "page031.jpg", "page032.jpg", "page033.jpg" , "page034.jpg", "page035.jpg", "page036.jpg", "page037.jpg", "page038.jpg", "page039.jpg",
+  "page040.jpg",  "page041.jpg", "page042.jpg", "page043.jpg" , "page044.jpg"
+];
+
 @Component({
   selector: 'app-illusion',
   standalone: true,
@@ -8,4 +16,20 @@ import { Component } from '@angular/core';
 })
 
 export class IllusionComponent {
+  currentPage = 0;
+  pages = illusionPages;
+  setPage (newPage : number) {
+    if (newPage < 0)
+    {
+      this.currentPage = illusionPages.length - 1;
+    }
+    else if (newPage >= illusionPages.length)
+    {
+      this.currentPage = 0;
+    }
+    else
+    {
+      this.currentPage = newPage;
+    }
+  }
 }

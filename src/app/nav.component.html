@@ -16,7 +16,7 @@
                     <div class="leftnav-sub-item-container">
 
                         @for (child of item.children; track child.id) {
-                            <div class="{{ item.childClass }}">
+                            <div class="{{ child.childClass }}">
                                 <div class="leftnav-sub-item-label">
                                     <a routerLink="{{ child.linkTo }}" routerLinkActive="active">
                                     {{ child.label }}
