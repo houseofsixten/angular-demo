@@ -4,7 +4,7 @@ import { AutumnComponent } from './touhou/autumn.component';
 import { IllusionComponent } from './touhou/illusion.component';
 
 export const routes: Routes = [
-    { path: 'touhou/fairy', component: FairyComponent},
-    { path: 'touhou/autumn', component: AutumnComponent},
-    { path: 'touhou/illusion', component: IllusionComponent},
+    { path: 'touhou/fairy/:pagenumber', component: FairyComponent},
+    { path: 'touhou/autumn/:pagenumber', component: AutumnComponent},
+    { path: 'touhou/illusion/:pagenumber', component: IllusionComponent},
 ];

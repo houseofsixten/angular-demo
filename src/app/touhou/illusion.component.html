@@ -1,3 +1,21 @@
 <div class="gallery-container">
-    <h1>USE YOUR ILLUSION</h1>
+
+    <div class="gallery-title-container">
+        <h1 class="gallery-title">Use Your Illusion</h1>
+    </div>
+
+    <div class="paging-button-container">
+        <div class="paging-button prev-page" (click)="setPage(currentPage - 1)">
+            <span class="fa-solid fa-caret-left"></span>
+            Previous Page
+        </div>
+        <div class="page-counter">Page {{ currentPage }} of {{ pages.length - 1 }}</div>
+        <div class="paging-button next-page" (click)="setPage(currentPage + 1)">
+            Next Page
+            <span class="fa-solid fa-caret-right"></span>
+        </div>
+    </div>
+
+    <img src="touhou/illusion/{{ pages[currentPage] }}" alt="comic page" class="comic-page"/>
+
 </div>

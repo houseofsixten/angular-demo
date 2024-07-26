@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 const autumnPages = [
   "page000.jpg",  "page001.jpg", "page002.jpg", "page003.jpg" , "page004.jpg", "page005.jpg", "page006.jpg", "page007.jpg", "page008.jpg", "page009.jpg",
@@ -16,21 +16,25 @@ const autumnPages = [
   styleUrl: './touhou.component.css'
 })
 
-export class AutumnComponent {
+export class AutumnComponent implements OnInit {
+
+  @Input() pagenumber!: string;
+
   currentPage = 0;
+  nextPage = 1;
+  prevPage = autumnPages.length - 1;
+
+  ngOnInit() {    
+
+    this.currentPage = Number(this.pagenumber);
+
+    if (this.currentPage == 0) { this.prevPage = autumnPages.length - 1; }
+    else { this.prevPage = this.currentPage - 1; }
+    
+    if (this.currentPage == autumnPages.length - 1) { this.nextPage = 0; }
+    else { this.nextPage = this.currentPage + 1; }
+  };
+  
   pages = autumnPages;
-  setPage (newPage : number) {
-    if (newPage < 0)
-    {
-      this.currentPage = autumnPages.length - 1;
-    }
-    else if (newPage >= autumnPages.length)
-    {
-      this.currentPage = 0;
-    }
-    else
-    {
-      this.currentPage = newPage;
-    }
-  }
+  
 }
