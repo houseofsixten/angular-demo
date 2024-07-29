@@ -5,10 +5,12 @@ import { filter, map } from 'rxjs';
 const parentClassBase = "fa-solid fa-arrow-right fa-rotate-by";
 const parentClassCollapsed = "fa-solid fa-arrow-right fa-rotate-by collapsed-arrow";
 const parentClassExpanded = "fa-solid fa-arrow-right fa-rotate-by expanded-arrow";
+const parentClassParentOfActive = "fa-solid fa-arrow-right fa-rotate-by parent-of-active-arrow";
 const childClassBase = "leftnav-sub-item";
 const childClassCollapsed = "leftnav-sub-item collapsed-sub";
 const childClassExpanded = "leftnav-sub-item expanded-sub";
-const childClassActive = "leftnav-sub-item expanded-sub active-sub";
+const childClassActive = "leftnav-sub-item active-sub";
+const childClassSiblingOfActive = "leftnav-sub-item sibling-of-active-sub";
 
 var navItems = [
   {
@@ -94,13 +96,13 @@ var navItems = [
               if (isParentNavItemActive == true)
               {
                 this.navItems[i].expanded = true;
-                this.navItems[i].parentClass = parentClassExpanded;
+                this.navItems[i].parentClass = parentClassParentOfActive;
                 
                 for (var j = 0; j < navItems[i].children.length; j++)
                 {
                   if (navItems[i].children[j].isActive == false)
                   {
-                    navItems[i].children[j].childClass = childClassExpanded;
+                    navItems[i].children[j].childClass = childClassSiblingOfActive;
                   }
                 }
               }
