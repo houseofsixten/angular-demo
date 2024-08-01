@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { PagerComponent } from '../common/pager.component';
 
 const autumnPages = [
   "page000.jpg",  "page001.jpg", "page002.jpg", "page003.jpg" , "page004.jpg", "page005.jpg", "page006.jpg", "page007.jpg", "page008.jpg", "page009.jpg",
@@ -12,29 +13,13 @@ const autumnPages = [
 @Component({
   selector: 'app-autumn',
   standalone: true,
+  imports: [ PagerComponent ],
   templateUrl: './autumn.component.html',
   styleUrl: './touhou.component.css'
 })
 
-export class AutumnComponent implements OnInit {
-
+export class AutumnComponent {
   @Input() pagenumber!: string;
-
-  currentPage = 0;
-  nextPage = 1;
-  prevPage = autumnPages.length - 1;
-
-  ngOnInit() {    
-
-    this.currentPage = Number(this.pagenumber);
-
-    if (this.currentPage == 0) { this.prevPage = autumnPages.length - 1; }
-    else { this.prevPage = this.currentPage - 1; }
-    
-    if (this.currentPage == autumnPages.length - 1) { this.nextPage = 0; }
-    else { this.nextPage = this.currentPage + 1; }
-  };
-  
   pages = autumnPages;
-  
+  imagefolder = "touhou/autumn/";
 }

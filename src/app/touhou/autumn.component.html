@@ -4,18 +4,6 @@
         <h1 class="gallery-title">Autumn Children</h1>
     </div>
 
-    <div class="paging-button-container">
-        <a class="paging-button prev-page" href="touhou/autumn/{{ prevPage }}">
-            <span class="fa-solid fa-caret-left"></span>
-            Previous Page
-        </a>
-        <div class="page-counter">Page {{ currentPage }} of {{ pages.length - 1 }}</div>
-        <a class="paging-button next-page" href="touhou/autumn/{{ nextPage }}">
-            Next Page
-            <span class="fa-solid fa-caret-right"></span>
-        </a>
-    </div>
-
-    <img src="touhou/autumn/{{ pages[currentPage] }}" alt="comic page" class="comic-page"/>
+    <app-pager [imagefolder]="imagefolder" [pages]="pages" [pagenumber]="pagenumber"></app-pager>
 
 </div>
