@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { PagerComponent } from '../common/pager.component';
 
 const illusionPages = [
   "page000.jpg",  "page001.jpg", "page002.jpg", "page003.jpg" , "page004.jpg", "page005.jpg", "page006.jpg", "page007.jpg", "page008.jpg", "page009.jpg",
@@ -11,25 +12,13 @@ const illusionPages = [
 @Component({
   selector: 'app-illusion',
   standalone: true,
+  imports: [ PagerComponent ],
   templateUrl: './illusion.component.html',
   styleUrl: './touhou.component.css'
 })
 
 export class IllusionComponent {
-  currentPage = 0;
+  @Input() pagenumber!: string;
   pages = illusionPages;
-  setPage (newPage : number) {
-    if (newPage < 0)
-    {
-      this.currentPage = illusionPages.length - 1;
-    }
-    else if (newPage >= illusionPages.length)
-    {
-      this.currentPage = 0;
-    }
-    else
-    {
-      this.currentPage = newPage;
-    }
-  }
+  imagefolder = "touhou/illusion/";
 }

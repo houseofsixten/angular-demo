@@ -1,0 +1,13 @@
+<div class="paging-button-container">
+    <a class="paging-button prev-page" href="{{ imagefolder }}{{ prevPage }}">
+        <span class="fa-solid fa-caret-left"></span>
+        Previous Page
+    </a>
+    <div class="page-counter">Page {{ currentPage }} of {{ pages.length - 1 }}</div>
+    <a class="paging-button next-page" href="{{ imagefolder }}{{ nextPage }}">
+        Next Page
+        <span class="fa-solid fa-caret-right"></span>
+    </a>
+</div>
+
+<img src="{{ imagefolder }}{{ pages[currentPage] }}" alt="comic page" class="comic-page"/>

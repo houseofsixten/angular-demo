@@ -1,0 +1,22 @@
+
+.paging-button-container
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.paging-button {
+  border: 3px black solid;
+  border-radius: 10px;
+  padding: 5px;
+  background-color: #C8F1B4;
+}
+
+@media screen and (max-width: 1000px) {
+    .comic-page
+    {
+      width: 100%;
+    }
+}

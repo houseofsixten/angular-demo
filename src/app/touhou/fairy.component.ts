@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { PagerComponent } from '../common/pager.component';
 
 const fairyPages = [
   "fr3_page000c.jpg",  "fr3_page001.jpg", "fr3_page002.jpg", "fr3_page003.jpg" , "fr3_page004.jpg", "fr3_page005.jpg", "fr3_page006.jpg", "fr3_page007.jpg", "fr3_page008.jpg", "fr3_page009.jpg",
@@ -11,25 +12,13 @@ const fairyPages = [
 @Component({
   selector: 'app-fairy',
   standalone: true,
+  imports: [ PagerComponent ],
   templateUrl: './fairy.component.html',
   styleUrl: './touhou.component.css'
 })
 
 export class FairyComponent {
-  currentPage = 0;
+  @Input() pagenumber!: string;
   pages = fairyPages;
-  setPage (newPage : number) {
-    if (newPage < 0)
-    {
-      this.currentPage = fairyPages.length - 1;
-    }
-    else if (newPage >= fairyPages.length)
-    {
-      this.currentPage = 0;
-    }
-    else
-    {
-      this.currentPage = newPage;
-    }
-  }
+  imagefolder = "touhou/fairy/";
 }
