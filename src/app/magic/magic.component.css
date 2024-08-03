@@ -1,0 +1,31 @@
+.gallery-container
+{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    border: 4px black solid;
+    background-color: white;
+    border-radius: 20px;
+    margin-top: 8px;    
+    margin-bottom: 10px;
+    background-color: #C9E9FE;
+}
+
+.gallery-title-container
+{
+  width: 100%;
+  text-align: center;
+}
+
+.gallery-title
+{
+    margin-top: 8px;
+    margin-bottom: 5px;
+}
+
+@media screen and (max-width: 1000px) {
+    .gallery-container
+    {
+      max-width: 100%;
+    }
+}

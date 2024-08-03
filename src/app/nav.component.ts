@@ -15,7 +15,7 @@ const childClassSiblingOfActive = "leftnav-sub-item sibling-of-active-sub";
 var navItems = [
   {
     id: 0,
-    label: "Touhou",
+    label: "Touhou Project",
     expanded: false,
     parentClass: parentClassBase,    
     children : [
@@ -26,12 +26,11 @@ var navItems = [
   },
   {
     id: 1,
-    label: "Item 02",
+    label: "Magic the Gathering",
     expanded: false,
     parentClass: parentClassBase,
     children : [
-      { id: 2.1, label: "Sub Item 2.1", linkTo: "/item02/subItem2_1", isActive: false, childClass: childClassBase },
-      { id: 2.2, label: "Sub Item 2.2", linkTo: "/item02/subItem2_2", isActive: false, childClass: childClassBase }
+      { id: 2.1, label: "Lotus Cobra is Evil", linkTo: "/magic/cobra/0", isActive: false, childClass: childClassBase }
     ]
   },
   {
@@ -106,6 +105,17 @@ var navItems = [
                   }
                 }
               }
+              else
+              {
+                this.navItems[i].expanded = false;
+                this.navItems[i].parentClass = parentClassBase;
+
+                for (var j = 0; j < navItems[i].children.length; j++)
+                  {
+                    this.navItems[i].children[j].isActive = false;
+                    this.navItems[i].children[j].childClass = childClassBase;
+                  }
+              }              
             }
           }
           else
@@ -113,12 +123,12 @@ var navItems = [
             for (var i = 0; i < navItems.length; i++)
             {
               this.navItems[i].expanded = false;
-              this.navItems[i].parentClass = parentClassCollapsed;
+              this.navItems[i].parentClass = parentClassBase;
 
               for (var j = 0; j < navItems[i].children.length; j++)
               {
                 this.navItems[i].children[j].isActive = false;
-                this.navItems[i].children[j].childClass = childClassCollapsed;
+                this.navItems[i].children[j].childClass = childClassBase;
               }
             }
           }
