@@ -51,7 +51,7 @@ var navItems = [
 @Component({
     selector: 'app-nav',
     standalone: true,
-    imports: [RouterOutlet, RouterLink, RouterLinkActive],
+    imports: [RouterLink, RouterLinkActive],
     templateUrl: './nav.component.html',    
     styleUrl: './nav.component.css'
   })
